@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VPING Encryptor</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #0f172a;
+      color: #e5e7eb;
+      line-height: 1.7;
+    }
+
+    header {
+      padding: 72px 20px;
+      text-align: center;
+      background: linear-gradient(135deg, #111827, #1e3a8a);
+    }
+
+    header h1 {
+      font-size: 2.6rem;
+      margin: 0 0 12px;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      color: #cbd5e1;
+      margin: 0;
+    }
+
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    section {
+      background: #111827;
+      border: 1px solid #334155;
+      border-radius: 16px;
+      padding: 28px;
+      margin-bottom: 24px;
+    }
+
+    h2 {
+      margin-top: 0;
+      color: #93c5fd;
+    }
+
+    ul {
+      padding-left: 1.4em;
+    }
+
+    code {
+      background: #020617;
+      padding: 2px 6px;
+      border-radius: 6px;
+      color: #bfdbfe;
+    }
+
+    .button {
+      display: inline-block;
+      margin: 8px 8px 0 0;
+      padding: 12px 18px;
+      border-radius: 999px;
+      background: #2563eb;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .button.secondary {
+      background: #334155;
+    }
+
+    .warning {
+      border-color: #f59e0b;
+      background: #1f2937;
+    }
+
+    footer {
+      text-align: center;
+      padding: 32px 20px;
+      color: #94a3b8;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>VPING Encryptor</h1>
+    <p>PNG形式で暗号化データを保存する、耐障害型暗号化ツール</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>概要</h2>
+      <p>
+        VPING Encryptor は、ファイルを AES-GCM で暗号化し、
+        PNG形式の暗号化コンテナとして保存するソフトウェアです。
+      </p>
+      <p>
+        Version 4.0.0 では内部フォーマットを刷新し、
+        ECC（誤り訂正）、SHA-256検証、破損復旧処理を強化しました。
+      </p>
+    </section>
+
+    <section>
+      <h2>主な機能</h2>
+      <ul>
+        <li>AES-GCM によるファイル暗号化</li>
+        <li>PNG形式での暗号化データ保存</li>
+        <li>ECC（誤り訂正）による破損耐性向上</li>
+        <li>SHA-256 による整合性検証</li>
+        <li>ブロックチェーン風の操作履歴管理</li>
+        <li>GUIによる暗号化・復号操作</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Version 4.0.0</h2>
+      <ul>
+        <li>PNG暗号化コンテナ内部構造を v3 に刷新</li>
+        <li>ECC適用位置を見直し、PNG内部データ破損への耐性を向上</li>
+        <li>検証処理と復旧処理を改善</li>
+        <li>復号時の <code>_decrypted</code> 付与設定を追加</li>
+        <li>上書き確認ダイアログの ON/OFF 設定を追加</li>
+        <li>元ファイル削除設定を設定ファイル側で管理</li>
+      </ul>
+    </section>
+
+    <section class="warning">
+      <h2>重要: 旧形式との互換性について</h2>
+      <p>
+        VPING Encryptor 4.0.0 では、内部フォーマット v3 への移行に伴い、
+        旧バージョンで生成された一部PNG暗号化データとの互換性がありません。
+      </p>
+      <p>
+        旧データを利用する場合は、必要に応じて旧バージョンで復号してください。
+      </p>
+    </section>
+
+    <section>
+      <h2>内部構造</h2>
+      <p>Version 4.0.0 では、以下のような多層構造でデータを保護します。</p>
+      <pre><code>元データ
+ ↓
+AES-GCM 暗号化
+ ↓
+LZMA 圧縮
+ ↓
+ECC 付与
+ ↓
+PNG コンテナ化</code></pre>
+    </section>
+
+    <section>
+      <h2>ダウンロード</h2>
+      <p>
+        最新版は GitHub または Booth から入手できます。
+      </p>
+      <a class="button" href="#">GitHubを見る</a>
+      <a class="button secondary" href="https://innovationcraft.booth.pm/">Boothを見る</a>
+      <a class="button secondary" href="https://anvelk.stores.jp/">公式ショップを見る</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Innovation Craft Inc. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
